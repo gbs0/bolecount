@@ -71,15 +71,15 @@ def show_recipe
 end
 
 loop do 
+  #Pressionar ENTER ou 'sair'
+  until n_in_boleto << '' or n_in_boleto << 0.0 do
 
-  while n_in_boleto == true  
-    ask_boleto_value
-    n_in_boleto
-    showing_table
+  ask_boleto_value
+  n_in_boleto
+  showing_table
+
   end
 
-  #Pressionar ENTER ou 'sair'
-  break if n_in_boleto << '' or n_in_boleto << 0.0
 
 end
 
