@@ -5,18 +5,22 @@ class Bolecount
   end
 
   # Calculando soma total dos valores   
-  def soma(elements)
-    sum = 0 
+  def calculating_values(elements)
+    int = 0 
     elements.each do |element|
-      sum += element
+      int += element
     end
-    return sum
+    return int
   end
 
-  def ask_for_new_boleto
+  def ask_for_new_boleto(n)
     $stdout.puts 'Digite o valor do boleto: (ou \'ok\' para continuar)'
     n = gets.chomp.to_f
-    @boletos << n
+    return n
+  end
+
+  def n_in_array
+    @boletos << ask_for_new_boleto(n)
   end
 
   def show_boletos
@@ -24,7 +28,7 @@ class Bolecount
     $stdout.puts
     $stdout.puts 'Tabela dos valores inseridos:'
     $stdout.puts @boletos.sort.to_s
-    $stdout.puts 'Total:R$ ' + soma(@boletos).to_s
+    $stdout.puts 'Total:R$ ' + calculating_values(@boletos).to_s
     $stdout.puts '-' * 34
     $stdout.puts
   end
@@ -33,9 +37,10 @@ end
 bolecount = Bolecount.new
 
 loop do
-  bolecount.ask_for_new_boleto
+  bolecount.ask_for_new_boleto(n)
+  
 
-  break if  == 'Sair'
+  
 end
 
 

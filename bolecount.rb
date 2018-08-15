@@ -17,18 +17,21 @@ def soma(allowed)
 end
 
 loop do
-$stdout.puts 'Qual o valor do boleto? (ou \'sair\' para sair)'
-b = gets.chomp.to_f
-@boletos << b
+  $stdout.puts '(Digite \'ok\' p/ continuar ou \'sair\' p/ sair)'
+  $stdout.puts 'Qual o valor do boleto? (Dica: Utilize \',\' p/ separar os centavos)'
+  b = gets.chomp.to_f
+  @boletos << b
 
 
 #Mostrando os valores no terminal
+$stdout.puts
 $stdout.puts '-' * 34
-$stdout.puts 'Tabela dos valores inseridos:'
+$stdout.puts 'Valores inseridos:'
 $stdout.puts @boletos.sort.to_s
 $stdout.puts 'Total:R$ ' + soma(@boletos).to_s
 $stdout.puts '-' * 34
 $stdout.puts
+
 end
 
 #Perguntando ao usuário qual foi o valor pago
