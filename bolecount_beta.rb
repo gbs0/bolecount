@@ -18,9 +18,9 @@ end
 
 # Calculando soma total dos valores   
 def soma(allowed)
-  sum = 0 
+  int = 0 
   allowed.each do |i|
-    sum += i
+    int += i
   end
   return sum
 end
@@ -70,18 +70,14 @@ def show_recipe
   $stdout.puts
 end
 
-loop do 
-  #Pressionar ENTER ou 'sair'
-  until n_in_boleto << '' or n_in_boleto << 0.0 do
-
-  ask_boleto_value
-  n_in_boleto
-  showing_table
-
-  end
-
-
-end
+# loop do 
+#   #Pressionar ENTER ou 'sair'
+#   # break if n_in_boleto << '' or n_in_boleto << 0.0
+#   ask_boleto_value
+#   n_in_boleto
+#   show_recipe
+  
+# end
 
 
 
