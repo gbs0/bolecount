@@ -1,4 +1,4 @@
-#Declarando os valores presentes
+ #Declarando os valores presentes
 =begin
     Declaração de números decimais utilizamos o '.'
     Para separar os números, utilizamos ','
@@ -34,13 +34,15 @@ loop do
   $stdout.puts 'Total:R$ ' + soma(@boletos).to_s
   $stdout.puts '-' * 34
   $stdout.puts
-
+  
+  # while n_in_boleto != 
+    
+  end
 end
 
 #Perguntando ao usuário qual foi o valor pago
 $stdout.puts 'Qual o valor pago? (ou \'sair\' para sair)'
 n = gets.chomp.to_f
-
 
 
 #Método que recebe o algoritmo de soma

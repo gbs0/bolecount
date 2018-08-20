@@ -5,7 +5,6 @@
 =end
 @boletos = []
 
-
 def ask_boleto_value
   $stdout.puts '(Digite \'ok\' p/ continuar ou \'sair\' p/ sair)'
   $stdout.puts 'Qual o valor do boleto? (Dica: Utilize \',\' p/ separar os centavos)'
@@ -35,13 +34,11 @@ def showing_table
   $stdout.puts  
 end
 
-
 #Perguntando ao usuário qual foi o valor pago
 def aks_final_value 
   $stdout.puts 'Qual o valor pago? (ou \'sair\' para sair)'
   n = gets.chomp.to_f
 end
-
 
 #Método que recebe o algoritmo de soma
 def into_sum_of_allowed_numbers(n)
@@ -59,7 +56,6 @@ def into_sum_of_allowed_numbers(n)
   nil
 end
 
-
 #Showing final recipe
 def show_recipe
   $stdout.puts 
@@ -70,14 +66,14 @@ def show_recipe
   $stdout.puts
 end
 
-# loop do 
-#   #Pressionar ENTER ou 'sair'
-#   # break if n_in_boleto << '' or n_in_boleto << 0.0
-#   ask_boleto_value
-#   n_in_boleto
-#   show_recipe
+loop do 
+  #Pressionar ENTER ou 'sair'
+  # break if n_in_boleto << '' or n_in_boleto << 0.0
+  ask_boleto_value
+  n_in_boleto
+  show_recipe
   
-# end
+end
 
 
 
