@@ -18,7 +18,7 @@ end
 def n_in_boleto
   b = gets.chomp.to_f
   @boletos << b
-  check_method
+  check_method  
 end
 
 def check_method
