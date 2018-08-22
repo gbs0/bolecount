@@ -18,8 +18,16 @@ end
 def n_in_boleto
   b = gets.chomp.to_f
   @boletos << b
+  check_method
 end
 
+def check_method
+    mynum = @boletos.first
+    if mynum == 0
+      ask_conttibuente
+    end
+end
+#Script loop here
 loop do
   $stdout.puts '(Digite \'ok\' p/ continuar ou \'sair\' p/ sair)'
   $stdout.puts 'Qual o valor do boleto? (Dica: Utilize \',\' p/ separar os centavos)'
@@ -34,15 +42,22 @@ loop do
   $stdout.puts '-' * 34
   $stdout.puts
   
-  # while n_in_boleto != 
-    
-  end
+  #Garbage Colector
+  # while n_in_boleto !=
+
+  # if check_method == false
+  #   break
+  # end
+
+
 end
 
+#Section of remaing info
 #Perguntando ao usuário qual foi o valor pago
-$stdout.puts 'Qual o valor pago? (ou \'sair\' para sair)'
-n = gets.chomp.to_f
-
+def ask_conttibuente
+  $stdout.puts 'Agora, qual o valor pago pelo contribuente? (ou \'sair\' para sair)'
+  n = gets.chomp.to_f
+end
 
 #Método que recebe o algoritmo de soma
 def into_sum_of_allowed_numbers(n)
