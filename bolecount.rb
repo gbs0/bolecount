@@ -37,7 +37,6 @@ loop do
   
   # while n_in_boleto != 
     
-  end
 end
 
 #Perguntando ao usuário qual foi o valor pago
