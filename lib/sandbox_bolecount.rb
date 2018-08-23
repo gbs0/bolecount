@@ -14,6 +14,10 @@ class Bolecount
     return int
   end
 
+  def ask_final
+      
+  end
+
   #Método que recebe o algoritmo de soma
   def into_sum_of_allowed_numbers(n)
     return [] if n == 0 
@@ -45,7 +49,7 @@ class Bolecount
   #into_sum_of_allowed_numbers(4.5) # ==> [0.5, 2, 2]
   def show_result
   $stdout.puts 'Qual o valor pago? (ou \'sair\' para sair)'
-  n = gets.chomp.to_f
+  n = gets.chomp.tso_f
   show_boletos
 
   $stdout.puts 
@@ -54,7 +58,6 @@ class Bolecount
   $stdout.puts into_sum_of_allowed_numbers(n)
   $stdout.puts '-' * 34
   $stdout.puts
-  
   end
 
   def show_boletos
