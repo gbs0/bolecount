@@ -3,8 +3,6 @@ class Bolecount
   def initialize
     @boletos = []
   end
-  
-  bolecount = Bolecount.new
 
 
   # Calculando soma total dos valores   
@@ -15,30 +13,6 @@ class Bolecount
     end
     return int
   end
-
-  def ask_for_new_boleto
-    $stdout.puts 'Digite o valor do boleto: (ou \'ok\' para continuar)'
-    n = gets.chomp
-    if n == 'ok'
-      ask_final
-      into_sum_of_allowed_numbers(n)
-      show_result
-    else
-      @boletos << n.to_f
-      show_boletos
-    end
-  end
-
-  def show_boletos
-    #Mostrando os valores no terminal
-    $stdout.puts
-    $stdout.puts 'Tabela dos valores inseridos:'
-    $stdout.puts @boletos.sort.to_s
-    $stdout.puts 'Total:R$ ' + calculating_values.to_s
-    $stdout.puts '-' * 34
-    $stdout.puts
-  end
-
 
   def ask_final
   $stdout.puts 'Qual o valor pago? (ou \'sair\' para sair)'
@@ -61,6 +35,29 @@ class Bolecount
     nil
   end
 
+  def ask_for_new_boleto
+    $stdout.puts 'Digite o valor do boleto: (ou \'ok\' para continuar)'
+    b = gets.chomp
+    if b == 'ok'
+      ask_final
+      into_sum_of_allowed_numbers(n)
+      show_result
+    else
+      @boletos << b.to_f
+      show_boletos
+    end
+  end
+
+  def show_boletos
+    #Mostrando os valores no terminal
+    $stdout.puts
+    $stdout.puts 'Tabela dos valores inseridos:'
+    $stdout.puts @boletos.sort.to_s
+    $stdout.puts 'Total:R$ ' + calculating_values.to_s
+    $stdout.puts '-' * 34
+    $stdout.puts
+  end
+
   #Mostrando os números
   #into_sum_of_allowed_numbers(4.5) # ==> [0.5, 2, 2]
   def show_result
@@ -72,6 +69,8 @@ class Bolecount
   $stdout.puts
   end
 end
+
+bolecount = Bolecount.new
 
 loop do
   bolecount.ask_for_new_boleto
