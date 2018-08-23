@@ -32,8 +32,7 @@ Explain how to run the automated tests for this system
 
 ### **Rodando o script:**
 
-Para iniciar a execução do script, no prompt de comando, navegue até a pasta `bolecount` e execute o arquivo `bolecount.rb` utilizando o seguinte comando:
-
+Para iniciar a execução do script, no prompt de comando, navegue até a pasta `bolecount`(iniciada no Desktop) e execute o arquivo `bolecount.rb` utilizando o seguinte comando:
 
 ```
 ruby bolecount.rb
@@ -43,7 +42,6 @@ ruby bolecount.rb
 
 * [Ruby] (https://www.ruby-lang.org/pt/) 
 * [Sublime Text] (https://maven.apache.org/) - Dependency Management
-* [ROME](https://rometools.github.io/rome/) - Used to generate RSS Feeds
 
 ## Contribuindo
 
