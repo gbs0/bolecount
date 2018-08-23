@@ -8,42 +8,35 @@ Para rodar o script acima, é necessária a instalação do [Ruby](https://www.r
 Veja a parte de **Instalação** p/ mais detalhes.
 
 Para edição do script, é necessária a instalação de qualquer editor de texto ou código. 
-Recomendamos o [Sublime Text](https://www.sublimetext.com/3)
+Recomendo o [Sublime Text](https://www.sublimetext.com/3)
 
 ### Instalação
 
-Este projeto foi desenvolvido utilizando 
-
-```
-Give the example
-```
+Baixe o [RubyInstaller](https://rubyinstaller.org/), descompacte em sua maquina local e execute-o
 
 Para certificar-se de que a instalação foi feita corretamente, no prompt de comando, digite o seguinte comando:
+`ruby --version`
 
+*Exemplo:*
 ```
 ruby --version
+#=> ruby 2.5.1p57 (2018-03-29 revision 63029) [x86_64-darwin16]
 ```
 
-End with an example of getting some data out of the system or using it for a little demo
+Após a instalação do Ruby, em seu prompt de comando, navegue até o Desktop utilizando o comando `cd Desktop` e faça um clone do repositorio utilizando:
+`git clone https://github.com/gbs0/bolecount.git`
 
-## Running the tests
+## Rodando alguns testes
 
 Explain how to run the automated tests for this system
 
-### Break down into end to end tests
+### **Rodando o script:**
 
-Explain what these tests test and why
+Para iniciar a execução do script, no prompt de comando, navegue até a pasta `bolecount` e execute o arquivo `bolecount.rb` utilizando o seguinte comando:
 
-```
-Give an example
-```
-
-### And coding style tests
-
-Explain what these tests test and why
 
 ```
-Give an example
+ruby bolecount.rb
 ```
 
 ## Feito com:
@@ -54,11 +47,7 @@ Give an example
 
 ## Contribuindo
 
-
 Please read [CONTRIBUTING.md](https://gist.github.com/PurpleBooth/b24679402957c63ec426) for details on our code of conduct, and the process for submitting pull requests to us.
-
-
-
 
 ## Autores
 
