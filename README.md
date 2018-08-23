@@ -15,7 +15,9 @@ Recomendo o [Sublime Text](https://www.sublimetext.com/3)
 Baixe o [RubyInstaller](https://rubyinstaller.org/), descompacte em sua maquina local e execute-o
 
 Para certificar-se de que a instalação foi feita corretamente, no prompt de comando, digite o seguinte comando:
-`ruby --version`
+```
+ruby --version
+```
 
 *Exemplo:*
 ```
@@ -24,7 +26,10 @@ ruby --version
 ```
 
 Após a instalação do Ruby, em seu prompt de comando, navegue até o Desktop utilizando o comando `cd Desktop` e faça um clone do repositorio utilizando:
-`git clone https://github.com/gbs0/bolecount.git`
+
+```
+git clone https://github.com/gbs0/bolecount.git
+```
 
 ## Rodando alguns testes
 
