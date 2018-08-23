@@ -1,72 +1,82 @@
- #Declarando os valores presentes
-=begin
-    Declaração de números decimais utilizamos o '.'
-    Para separar os números, utilizamos ','
-=end
+class Bolecount
 
-@boletos = []
-
-
-# Calculando soma total dos valores   
-def soma(allowed)
-  sum = 0 
-  allowed.each do |i|
-    sum += i
+  def initialize
+    @boletos = []
   end
-  return sum
+
+
+  # Calculando soma total dos valores   
+  def calculating_values
+    int = 0 
+    @boletos.each do |element|
+      int += element
+    end
+    return int
+  end
+
+  def ask_final
+      
+  end
+
+  #Método que recebe o algoritmo de soma
+  def into_sum_of_allowed_numbers(n)
+    return [] if n == 0 
+    @cache ||= {}
+    return @cache[n] if @cache[n]
+    
+    @boletos.each do |x|  
+      next if (n + 1) - x < 0
+      lesser_sum = into_sum_of_allowed_numbers(n - x)
+      next unless lesser_sum
+      @cache[n] = lesser_sum + [x]
+      return @cache[n]
+    end
+    nil
+  end
+
+  def ask_for_new_boleto
+    $stdout.puts 'Digite o valor do boleto: (ou \'ok\' para continuar)'
+    b = gets.chomp
+    if b == 'ok'
+      show_result
+    else
+      @boletos << b.to_f
+      show_boletos
+    end
+  end
+
+  #Mostrando os números
+  #into_sum_of_allowed_numbers(4.5) # ==> [0.5, 2, 2]
+  def show_result
+  $stdout.puts 'Qual o valor pago? (ou \'sair\' para sair)'
+  n = gets.chomp.to_f
+  show_boletos
+
+  $stdout.puts 
+  $stdout.puts '-' * 34
+  $stdout.puts 'Esses são os valores que correspondem sua soma:'
+  $stdout.puts into_sum_of_allowed_numbers(n)
+  $stdout.puts '-' * 34
+  $stdout.puts
+  end
+
+  def show_boletos
+    #Mostrando os valores no terminal
+    $stdout.puts
+    $stdout.puts '-' * 34
+    $stdout.puts 'Tabela dos valores inseridos:'
+    $stdout.puts @boletos.sort.to_s
+    $stdout.puts 'Total:R$ ' + calculating_values.to_s
+    $stdout.puts '-' * 34
+    $stdout.puts
+  end
+
 end
 
-def n_in_boleto
-  b = gets.chomp.to_f
-  @boletos << b
-end
+bolecount = Bolecount.new
 
 loop do
-  $stdout.puts '(Digite \'ok\' p/ continuar ou \'sair\' p/ sair)'
-  $stdout.puts 'Qual o valor do boleto? (Dica: Utilize \',\' p/ separar os centavos)'
-  n_in_boleto
-
-  #Mostrando os valores no terminal
-  $stdout.puts
-  $stdout.puts '-' * 34
-  $stdout.puts 'Valores inseridos:'
-  $stdout.puts @boletos.sort.to_s
-  $stdout.puts 'Total:R$ ' + soma(@boletos).to_s
-  $stdout.puts '-' * 34
-  $stdout.puts
-  
-  # while n_in_boleto != 
-    
+  bolecount.ask_for_new_boleto
 end
 
-#Perguntando ao usuário qual foi o valor pago
-$stdout.puts 'Qual o valor pago? (ou \'sair\' para sair)'
-n = gets.chomp.to_f
-
-
-#Método que recebe o algoritmo de soma
-def into_sum_of_allowed_numbers(n)
-  return [] if n == 0 
-  @cache ||= {}
-  return @cache[n] if @cache[n]
-  
-  @boletos.each do |x|  
-    next if (n + 1) - x < 0
-    lesser_sum = into_sum_of_allowed_numbers(n - x)
-    next unless lesser_sum
-    @cache[n] = lesser_sum + [x]
-    return @cache[n]
-  end
-  nil
-end
-
-
-#Mostrando os números
-# into_sum_of_allowed_numbers(4.5) # ==> [0.5, 2, 2]
-$stdout.puts 
-$stdout.puts '-' * 34
-$stdout.puts 'Esses são os valores que correspondem sua soma:'
-$stdout.puts into_sum_of_allowed_numbers(n)
-$stdout.puts '-' * 34
-$stdout.puts
 
