@@ -2,6 +2,8 @@
 
 Bôlecount é um projeto criado p/ ajudar profissionais em contabilidade/finanças a cruzar pagamentos de diferentes boletos consignados de uma só vez. 
 
+![Alt Text]('./lib/gifcount.gif')
+
 ## Pré-requisitos
 
 Para rodar o script acima, é necessária a instalação do [Ruby](https://www.ruby-lang.org/pt/) em sua máquina local.
