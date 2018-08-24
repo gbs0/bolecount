@@ -33,11 +33,11 @@ git clone https://github.com/gbs0/bolecount.git
 
 ## Rodando alguns testes
 
-Explain how to run the automated tests for this system
+*Explain how to run the automated tests for this system*
 
 ### **Rodando o script:**
 
-Para iniciar a execução do script, no prompt de comando, navegue até a pasta `bolecount`(iniciada no Desktop) e execute o arquivo `bolecount.rb` utilizando o seguinte comando:
+Para iniciar a execução do script, no prompt de comando, navegue até a pasta `bolecount`(iniciada no Desktop) e execute o arquivo `bolecount.rb` utilizando:
 
 ```
 ruby bolecount.rb
