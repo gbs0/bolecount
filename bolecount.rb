@@ -57,6 +57,9 @@ class Bolecount
   $stdout.puts 'Qual o valor pago? (ou \'sair\' para sair)'
   n = gets.chomp.to_f
   show_boletos
+  if n == 'sair'
+    exit
+  end
 
   $stdout.puts 
   $stdout.puts '-' * 34
@@ -71,7 +74,7 @@ class Bolecount
     $stdout.puts
     $stdout.puts '-' * 34
     $stdout.puts 'Tabela dos valores inseridos:'
-    $stdout.puts @boletos.sort.to_s
+    $stdout.puts @boletos.to_s
     $stdout.puts 'Total:R$ ' + calculating_values.to_s
     $stdout.puts '-' * 34
     $stdout.puts
