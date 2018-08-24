@@ -25,7 +25,7 @@ ruby --version
 #=> ruby 2.5.1p57 (2018-03-29 revision 63029) [x86_64-darwin16]
 ```
 
-Após a instalação do Ruby, em seu prompt de comando, navegue até o Desktop utilizando o comando `cd Desktop` e faça um clone do repositorio utilizando:
+Após a instalação do Ruby, em seu prompt de comando, navegue até o Desktop utilizando `cd Desktop` e faça um clone do repositorio com o seguinte comando:
 
 ```
 git clone https://github.com/gbs0/bolecount.git
