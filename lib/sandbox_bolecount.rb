@@ -49,7 +49,7 @@ class Bolecount
   #Mostrando os números
   #into_sum_of_allowed_numbers(4.5) # ==> [0.5, 2, 2]
   def show_help
-    $stdout.puts '(Utilize \'CTRL+C\' p/ sair)'
+    $stdout.puts '(Utilize \'sair\' p/ encerrar o programa)'
     $stdout.puts '(Dica: Use \'.\' p/ separar as casas decimais)'
   end
 
