@@ -1,9 +1,10 @@
+require 'cli/ui'
+
 class Bolecount
 
   def initialize
     @boletos = []
   end
-
 
   # Calculando soma total dos valores   
   def calculating_values
@@ -71,15 +72,14 @@ class Bolecount
 
   def show_boletos
     #Mostrando os valores no terminal
-    $stdout.puts
-    $stdout.puts '-' * 34
-    $stdout.puts 'Tabela dos valores inseridos:'
-    $stdout.puts @boletos.to_s
-    $stdout.puts 'Total:R$ ' + calculating_values.to_s
-    $stdout.puts '-' * 34
-    $stdout.puts
+    CLI::UI::StdoutRouter.enable
+      CLI::UI::Frame.open('Valores Inseridos') do
+      $stdout.puts '-' * 34
+      $stdout.puts @boletos.to_s
+      $stdout.puts '-' * 34
+      $stdout.puts 'Total:R$ ' + calculating_values.to_s
+    end
   end
-
 end
 
 bolecount = Bolecount.new
