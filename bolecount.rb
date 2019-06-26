@@ -33,19 +33,25 @@ class Bolecount
   end
 
   def ask_for_new_boleto
-    $stdout.puts 'Digite o valor dos boletos: (\'ok\' p/ entrar valor pago ou \'h\' p/ ajuda)'
-    b = gets.chomp
-    if b == 'ok'
-      show_result
-    elsif b == 'h'
-      show_help
-    elsif b == 'sair'
-      exit!      
-    else
-      @boletos << b.to_f
-      show_boletos
+    CLI::UI::StdoutRouter.enable
+      CLI::UI::Frame.open('Menu') do
+      $stdout.puts 'Digite o valor dos boletos: (\'ok\' p/ entrar valor pago ou \'h\' p/ ajuda)'
+        CLI::UI::Frame.open('Adicionar Boletos') do
+          print "> R$:"
+          b = gets.chomp
+          if b == 'ok'
+            show_result
+          elsif b == 'h'
+            show_help
+          elsif b == 'sair'
+            exit!      
+          else
+            @boletos << b.to_f
+            show_boletos
+          end
+        end
+      end
     end
-  end
 
   #Mostrando os números
   #into_sum_of_allowed_numbers(4.5) # ==> [0.5, 2, 2]
@@ -73,13 +79,14 @@ class Bolecount
   def show_boletos
     #Mostrando os valores no terminal
     CLI::UI::StdoutRouter.enable
-      CLI::UI::Frame.open('Valores Inseridos') do
+      CLI::UI::Frame.open('Boletos Inseridos') do
       $stdout.puts '-' * 34
       $stdout.puts @boletos.to_s
       $stdout.puts '-' * 34
       $stdout.puts 'Total:R$ ' + calculating_values.to_s
     end
   end
+
 end
 
 bolecount = Bolecount.new
