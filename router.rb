@@ -16,8 +16,15 @@ class Router
   private
 
   def print_actions
+    CLI::UI::Prompt.ask('O que você deseja fazer?') do |handler|
+      handler.option('Mostrar Boletos')  { |selection| selection }
+      handler.option('Adicionar Boletos')     { |selection| selection }
+      handler.option('Marcar como pago')   { |selection| selection }
+      handler.option('Deletar Boleto') { |selection| selection }
+    end # Callback will be  options: %w(rails go ruby python)
+
     puts "\n---"
-    puts 'What do you want to do?'
+    
     puts '1 - Display tasks'
     puts '2 - Add a new task'
     puts '3 - Mark a task as done'
