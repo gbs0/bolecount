@@ -37,7 +37,7 @@ class Bolecount
       CLI::UI::Frame.open('Menu') do
       $stdout.puts 'Digite o valor dos boletos: (\'ok\' p/ entrar valor pago ou \'h\' p/ ajuda)'
         CLI::UI::Frame.open('Adicionar Boletos') do
-          print "> R$:"
+          print "> R$ - "
           b = gets.chomp
           if b == 'ok'
             show_result
