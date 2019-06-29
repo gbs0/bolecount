@@ -20,7 +20,7 @@ class BoletosController
     @repository.add(boleto)
   end
 
-  def mark_as_done
+  def mark_as_paid
     # 1. Display list with indices
     display_boletos
     # 2. Ask user for index
@@ -28,7 +28,7 @@ class BoletosController
     # 3. Fetch boleto from repo
     boleto = @repository.find(index)
     # 4. Mark boleto as done
-    boleto.mark_as_done!
+    boleto.mark_as_paid!
   end
 
   def destroy
