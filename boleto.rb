@@ -1,16 +1,17 @@
 class Boleto
   attr_reader :description
 
-  def initialize(description)
+  def initialize(value, description)
+    @value = value
     @description = description
-    @done = false
+    @pay = false
   end
 
   def done?
     @done
   end
 
-  def mark_as_done!
+  def mark_as_pay!
     @done = true
   end
 end
