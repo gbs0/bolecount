@@ -1,1 +1,5 @@
-boletos_view.rb
+class BoletosView
+
+def ask_user_for_index(index)
+	
+end
