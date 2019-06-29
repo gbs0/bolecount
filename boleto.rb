@@ -1,9 +1,8 @@
 class Boleto
   attr_reader :description
 
-  def initialize(value, description)
+  def initialize(value)
     @value = value
-    @description = description
     @pay = false
   end
 
