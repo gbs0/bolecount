@@ -23,17 +23,17 @@ class Router
       handler.option('Marcar como pago')   { |selection| selection }
       handler.option('Deletar Boleto') { |selection| selection }
       puts '---'
-    end # Callback will be  options: %w(rails go ruby python)
+    end # Callback will be  options: %w(option1 option2 option3 option4)
   end
 
   def dispatch(action)
     case action
     when 1 then @controller.list
     when 2 then @controller.create
-    when 3 then @controller.mark_as_pay
+    when 3 then @controller.mark_as_paid
     when 4 then @controller.destroy
     else
-      puts "Please type 1, 2, 3 or 4 :)"
+      puts "Digite as seguintes opções: 1, 2, 3 ou 4"
     end
   end
 end
